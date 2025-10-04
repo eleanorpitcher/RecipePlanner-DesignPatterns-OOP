@@ -6,6 +6,7 @@ namespace RecipeApp.Data
         public List<User> Users { get; private set; }
         public List<MealPlan> MealPlans { get; private set; }
         public List<Ingredient> Ingredients { get; private set; }
+        public List<ShoppingList> ShoppingLists { get; private set; }
 
         public Database()
         {
@@ -13,6 +14,7 @@ namespace RecipeApp.Data
             Users = new List<User>();
             MealPlans = new List<MealPlan>();
             Ingredients = new List<Ingredient>();
+            ShoppingLists = new List<ShoppingList>();
         }
     }
 }

@@ -26,3 +26,4 @@
 /Users/eleanorpitcher/Desktop/dotnet projects/RecipeOrganiser/RecipeOrganiser/obj/Debug/net9.0/RecipeOrganiser.pdb
 /Users/eleanorpitcher/Desktop/dotnet projects/RecipeOrganiser/RecipeOrganiser/obj/Debug/net9.0/RecipeOrganiser.genruntimeconfig.cache
 /Users/eleanorpitcher/Desktop/dotnet projects/RecipeOrganiser/RecipeOrganiser/obj/Debug/net9.0/ref/RecipeOrganiser.dll
+/Users/eleanorpitcher/Desktop/dotnet projects/RecipeOrganiser/RecipeOrganiser/obj/Debug/net9.0/RecipeOrganiser.sourcelink.json

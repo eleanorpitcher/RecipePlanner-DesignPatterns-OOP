@@ -87,8 +87,14 @@ var mealPlan = new MealPlan(
 
 IMealPlanStrategy vegStrategy = new VegetarianStrategy();
 var plan = vegStrategy.GeneratePlan(admin, new List<Recipe> { carbonara, bruschetta });
-foreach (var recipe in plan)
+
+
+var shoppingListGenerator = new ShoppingListService();
+var shoppingList = shoppingListGenerator.GenerateShoppingList(mealPlan);
+
+foreach (var ingredient in shoppingList)
 {
-    Console.WriteLine(recipe.Name);
+    System.Console.WriteLine(ingredient.Name);
 }
+
 app.Run();
