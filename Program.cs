@@ -85,16 +85,18 @@ var mealPlan = new MealPlan(
 //     System.Console.WriteLine($"{user.Name}");
 // }
 
-IMealPlanStrategy vegStrategy = new VegetarianStrategy();
-var plan = vegStrategy.GeneratePlan(admin, new List<Recipe> { carbonara, bruschetta });
+// IMealPlanStrategy vegStrategy = new VegetarianStrategy();
+// var plan = vegStrategy.GeneratePlan(admin, new List<Recipe> { carbonara, bruschetta });
 
 
-var shoppingListGenerator = new ShoppingListService();
-var shoppingList = shoppingListGenerator.GenerateShoppingList(mealPlan);
+// var shoppingListGenerator = new ShoppingListService();
+// var shoppingList = shoppingListGenerator.GenerateShoppingList(mealPlan);
 
-foreach (var ingredient in shoppingList)
-{
-    System.Console.WriteLine(ingredient.Name);
-}
+// foreach (var ingredient in shoppingList)
+// {
+//     System.Console.WriteLine(ingredient.Name);
+// }
 
+var nutritionReport = new NutritionReport(mealPlan);
+System.Console.WriteLine(nutritionReport.CalculateStrategies());
 app.Run();
