@@ -1,6 +1,8 @@
+using RecipeApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-
+var database = new Database();
 //DATA
 
 var spaghetti = new Ingredient(1, "Spaghetti", 200, "grams", new List<IngredientCategory> { IngredientCategory.HighCarb });
@@ -97,6 +99,10 @@ var mealPlan = new MealPlan(
 //     System.Console.WriteLine(ingredient.Name);
 // }
 
-var nutritionReport = new NutritionReport(mealPlan);
-System.Console.WriteLine(nutritionReport.CalculateStrategies());
+// var nutritionReport = new NutritionReport(mealPlan);
+// System.Console.WriteLine(nutritionReport.CalculateStrategies());
+
+var recipeRepo = new RecipeRepo(database);
+recipeRepo.Attach(mealPlan);
+
 app.Run();

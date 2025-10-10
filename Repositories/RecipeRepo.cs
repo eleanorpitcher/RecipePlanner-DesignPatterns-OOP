@@ -3,7 +3,7 @@ using RecipeApp.Data;
 public class RecipeRepo : IRecipeRepo
 {
     private readonly Database _db;
-
+    private readonly List<IRecipeObserver> _observers = new();
     public RecipeRepo(Database db)
     {
         _db = db;
@@ -41,4 +41,23 @@ public class RecipeRepo : IRecipeRepo
     {
         return _db.Recipes;
     }
+
+    public void Attach(IRecipeObserver observer)
+    {
+        _observers.Add(observer);
+    }
+
+    public void Detach(IRecipeObserver observer)
+    {
+        _observers.Remove(observer);
+    }
+
+    public void Notify(Recipe recipe)
+    {
+        foreach (var observer in _observers)
+        {
+            observer.Update(recipe);
+        }
+    }
+
 }
